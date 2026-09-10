@@ -1,7 +1,855 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>El mundo de One Piece | Sandra Herrera</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8ef;
+            color: #333;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: linear-gradient(135deg, #8b0000, #d62828);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* MENÚ */
+
+        nav {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background: #444;
+        }
+
+        nav a:hover {
+            background: #d62828;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background: linear-gradient(
+                rgba(255, 239, 210, 0.9),
+                rgba(255, 248, 239, 0.95)
+            );
+        }
+
+        .bienvenida {
+            max-width: 800px;
+        }
+
+        .bienvenida h2 {
+            font-size: 38px;
+            color: #b22222;
+            margin-bottom: 20px;
+        }
+
+        .bienvenida p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #d62828;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background: #8b0000;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 50px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #b22222;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        /* HISTORIA */
+
+        .historia {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* PERSONAJES */
+
+        .personajes {
+            background: #f5e6d3;
+        }
+
+        .contenedor-personajes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 20px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .tarjeta h3 {
+            color: #b22222;
+            font-size: 25px;
+            margin: 15px 0 10px;
+        }
+
+        .tarjeta p {
+            line-height: 1.5;
+        }
+
+        /* INFORMACIÓN */
+
+        .informacion {
+            background: #fff8ef;
+            text-align: center;
+        }
+
+        .informacion > p {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* FRUTAS */
+
+        .cajas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto 0;
+        }
+
+        .caja {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .caja h3 {
+            color: #b22222;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .caja p {
+            line-height: 1.6;
+        }
+
+        /* SUEÑOS */
+
+        .suenos {
+            background: #f5e6d3;
+        }
+
+        .lista-suenos {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .sueno {
+            background: white;
+            margin: 15px 0;
+            padding: 18px 25px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        }
+
+        .sueno h3 {
+            color: #b22222;
+            margin-bottom: 8px;
+        }
+
+        .sueno p {
+            line-height: 1.6;
+        }
+
+        /* RECOMPENSAS */
+
+        .recompensas {
+            background: #ffe8c2;
+            text-align: center;
+        }
+
+        .recompensas p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* CURIOSIDADES */
+
+        .curiosidades {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .curiosidades ul {
+            margin-top: 20px;
+            padding-left: 30px;
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        /* MI OPINIÓN */
+
+        .opinion {
+            background: #ffe8c2;
+            text-align: center;
+        }
+
+        .opinion p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* ADAPTACIÓN PARA CELULAR */
+
+        @media (max-width: 800px) {
+
+            .contenedor-personajes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cajas {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .contenedor-personajes {
+                grid-template-columns: 1fr;
+            }
+
+            .bienvenida h2 {
+                font-size: 30px;
+            }
+
+            .bienvenida p {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
 <body>
-    <h1>¡Mi página de One Piece!</h1>
-    <p>Bienvenidos a mi aventura.</p>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <h1>🏴‍☠️ El mundo de One Piece</h1>
+
+        <p>Una página creada por Sandra Herrera</p>
+
+    </header>
+
+
+    <!-- MENÚ -->
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#historia">Historia</a>
+
+        <a href="#personajes">Personajes</a>
+
+        <a href="#frutas">Frutas del Diablo</a>
+
+        <a href="#mundo">El mundo</a>
+
+        <a href="#suenos">Sueños</a>
+
+        <a href="#curiosidades">Curiosidades</a>
+
+        <a href="#opinion">Mi opinión</a>
+
+    </nav>
+
+
+    <!-- INICIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div class="bienvenida">
+
+            <h2>¡Holiii! 💕</h2>
+
+            <p>
+                Holiii, soy Sandra Herrera de 2do D y mi anime favorito
+                es one piece y me gustaria q conociera sobre el un poco
+            </p>
+
+            <a class="boton" href="#historia">
+                ⚓ Conocer One Piece
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- HISTORIA -->
+
+    <section id="historia">
+
+        <h2>📖 ¿Qué es One Piece?</h2>
+
+        <div class="historia">
+
+            <p>
+                One Piece es un anime y manga creado por Eiichiro Oda.
+                La historia sigue las aventuras de Monkey D. Luffy y su
+                tripulación de piratas mientras recorren diferentes
+                lugares del mundo en busca del legendario tesoro llamado
+                One Piece.
+            </p>
+
+            <br>
+
+            <p>
+                Durante su viaje conocen muchos amigos y también enfrentan
+                diferentes enemigos. La serie destaca temas como la amistad,
+                los sueños, la libertad, el esfuerzo y la importancia de
+                ayudar a los demás.
+            </p>
+
+            <br>
+
+            <p>
+                Luffy comienza su aventura con el objetivo de convertirse
+                en el Rey de los Piratas. Para conseguirlo, reúne a un
+                grupo de compañeros que comparten diferentes sueños y
+                habilidades. Juntos recorren los mares y viven muchas
+                aventuras.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERSONAJES -->
+
+    <section class="personajes" id="personajes">
+
+        <h2>🏴‍☠️ Personajes principales</h2>
+
+        <div class="contenedor-personajes">
+
+
+            <!-- LUFFY -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/luffy.jpg" alt="Luffy">
+
+                <h3>Monkey D. Luffy</h3>
+
+                <p>
+                    Es el protagonista de One Piece y capitán de los
+                    Piratas del Sombrero de Paja. Su sueño es convertirse
+                    en el Rey de los Piratas.
+                </p>
+
+            </div>
+
+
+            <!-- ZORO -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/zoro.jpg" alt="Zoro">
+
+                <h3>Roronoa Zoro</h3>
+
+                <p>
+                    Es uno de los principales miembros de la tripulación.
+                    Es un espadachín que sueña con convertirse en el mejor
+                    espadachín del mundo.
+                </p>
+
+            </div>
+
+
+            <!-- NAMI -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/nami.jpg" alt="Nami">
+
+                <h3>Nami</h3>
+
+                <p>
+                    Es la navegante de los Piratas del Sombrero de Paja.
+                    Tiene grandes conocimientos sobre navegación y mapas.
+                </p>
+
+            </div>
+
+
+            <!-- SANJI -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/sanji.jpg" alt="Sanji">
+
+                <h3>Sanji</h3>
+
+                <p>
+                    Es el cocinero de la tripulación. También es un gran
+                    luchador y utiliza principalmente sus piernas para
+                    combatir.
+                </p>
+
+            </div>
+
+
+            <!-- CHOPPER -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/chopper.jpg" alt="Chopper">
+
+                <h3>Tony Tony Chopper</h3>
+
+                <p>
+                    Es el médico de la tripulación. Es un reno que obtuvo
+                    habilidades especiales después de comer una Fruta del
+                    Diablo.
+                </p>
+
+            </div>
+
+
+            <!-- BROOK -->
+
+            <div class="tarjeta">
+
+                <img src="imagenes/brook.jpg" alt="Brook">
+
+                <h3>Brook</h3>
+
+                <p>
+                    Es el músico de la tripulación. Es un esqueleto que
+                    también es un espadachín y tiene una personalidad
+                    muy divertida.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FRUTAS DEL DIABLO -->
+
+    <section class="informacion" id="frutas">
+
+        <h2>🍈 Las Frutas del Diablo</h2>
+
+        <p>
+            Las Frutas del Diablo son frutas especiales que existen en el
+            mundo de One Piece. Las personas que comen una de estas frutas
+            obtienen diferentes habilidades y poderes especiales.
+        </p>
+
+        <p>
+            Sin embargo, las personas que comen una Fruta del Diablo
+            pierden la capacidad de nadar. Existen diferentes tipos de
+            frutas y cada una puede otorgar habilidades diferentes.
+        </p>
+
+
+        <div class="cajas">
+
+
+            <div class="caja">
+
+                <h3>🍎 Paramecia</h3>
+
+                <p>
+                    Son frutas que proporcionan habilidades muy variadas.
+                    Pueden modificar el cuerpo, afectar objetos o producir
+                    diferentes efectos.
+                </p>
+
+            </div>
+
+
+            <div class="caja">
+
+                <h3>🦁 Zoan</h3>
+
+                <p>
+                    Permiten al usuario transformarse en un animal o en
+                    una forma combinada entre humano y animal.
+                </p>
+
+            </div>
+
+
+            <div class="caja">
+
+                <h3>🌪️ Logia</h3>
+
+                <p>
+                    Permiten controlar y transformarse en determinados
+                    elementos o fenómenos de la naturaleza.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- EL MUNDO -->
+
+    <section class="informacion" id="mundo">
+
+        <h2>🌊 El mundo de One Piece</h2>
+
+        <p>
+            El mundo de One Piece está formado por numerosos mares, islas
+            y lugares diferentes. Durante sus aventuras, Luffy y su
+            tripulación conocen culturas, personajes y situaciones
+            completamente distintas.
+        </p>
+
+        <p>
+            Uno de los lugares más importantes es el Grand Line, una zona
+            del océano donde ocurren muchas de las aventuras de la historia.
+            Los viajes por este lugar están llenos de desafíos y misterios.
+        </p>
+
+        <br>
+
+        <p>
+            Los personajes también visitan islas con diferentes paisajes,
+            climas y habitantes. Cada lugar aporta nuevos acontecimientos
+            a la historia y permite conocer más sobre el mundo.
+        </p>
+
+    </section>
+
+
+    <!-- SUEÑOS -->
+
+    <section class="suenos" id="suenos">
+
+        <h2>🎯 Los sueños de los personajes</h2>
+
+        <div class="lista-suenos">
+
+
+            <div class="sueno">
+
+                <h3>🏴‍☠️ Luffy</h3>
+
+                <p>
+                    Su sueño es convertirse en el Rey de los Piratas y
+                    encontrar el legendario One Piece.
+                </p>
+
+            </div>
+
+
+            <div class="sueno">
+
+                <h3>⚔️ Zoro</h3>
+
+                <p>
+                    Quiere convertirse en el mejor espadachín del mundo.
+                </p>
+
+            </div>
+
+
+            <div class="sueno">
+
+                <h3>🗺️ Nami</h3>
+
+                <p>
+                    Su objetivo es crear un mapa completo del mundo.
+                </p>
+
+            </div>
+
+
+            <div class="sueno">
+
+                <h3>🍳 Sanji</h3>
+
+                <p>
+                    Sueña con encontrar el All Blue, un lugar legendario
+                    relacionado con su pasión por la cocina.
+                </p>
+
+            </div>
+
+
+            <div class="sueno">
+
+                <h3>🦌 Chopper</h3>
+
+                <p>
+                    Quiere convertirse en un médico capaz de ayudar a las
+                    personas y tratar diferentes enfermedades.
+                </p>
+
+            </div>
+
+
+            <div class="sueno">
+
+                <h3>🎻 Brook</h3>
+
+                <p>
+                    Sueña con regresar junto a Laboon después de completar
+                    su viaje.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- RECOMPENSAS -->
+
+    <section class="recompensas">
+
+        <h2>💰 Las recompensas</h2>
+
+        <p>
+            En el mundo de One Piece, algunos piratas tienen recompensas
+            colocadas por el Gobierno Mundial. Estas recompensas
+            representan la importancia o el nivel de amenaza que las
+            autoridades atribuyen a determinados piratas.
+        </p>
+
+        <br>
+
+        <p>
+            Los carteles de recompensa son conocidos como "Wanted" y
+            muestran información sobre la persona buscada. Estos carteles
+            se han convertido en uno de los elementos más conocidos de
+            One Piece.
+        </p>
+
+    </section>
+
+
+    <!-- CURIOSIDADES -->
+
+    <section id="curiosidades">
+
+        <h2>⭐ Curiosidades</h2>
+
+        <div class="curiosidades">
+
+            <ul>
+
+                <li>
+                    One Piece fue creado por Eiichiro Oda.
+                </li>
+
+                <li>
+                    Luffy es el capitán de los Piratas del Sombrero de Paja.
+                </li>
+
+                <li>
+                    La tripulación tiene diferentes habilidades y profesiones.
+                </li>
+
+                <li>
+                    La historia está llena de aventuras, misterios y lugares
+                    diferentes.
+                </li>
+
+                <li>
+                    La amistad y los sueños son temas muy importantes en la serie.
+                </li>
+
+                <li>
+                    Cada integrante de la tripulación tiene una función
+                    importante durante los viajes.
+                </li>
+
+                <li>
+                    Los personajes tienen diferentes objetivos personales
+                    que quieren alcanzar.
+                </li>
+
+                <li>
+                    Las aventuras de la tripulación ocurren en diferentes
+                    islas y mares.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- MI OPINIÓN -->
+
+    <section class="opinion" id="opinion">
+
+        <h2>💗 Mi opinión</h2>
+
+        <p>
+            Me gusta One Piece porque tiene personajes interesantes,
+            aventuras emocionantes y momentos divertidos. También me gusta
+            porque muestra la importancia de la amistad, de luchar por
+            nuestros sueños y de nunca rendirse ante las dificultades.
+        </p>
+
+        <br>
+
+        <p>
+            Para mí, una de las mejores cosas de One Piece es que cada
+            personaje tiene una personalidad diferente y una historia
+            propia. Esto hace que la serie sea entretenida y que los
+            personajes sean fáciles de recordar.
+        </p>
+
+        <br>
+
+        <p>
+            También me gusta la forma en que los personajes trabajan
+            juntos y se apoyan durante sus aventuras. Por eso considero
+            que One Piece es un anime muy interesante para conocer y
+            disfrutar.
+        </p>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            © 2026 Sandra Herrera | Mi página sobre One Piece 🏴‍☠️
+        </p>
+
+    </footer>
+
+
 </body>
+
 </html>
